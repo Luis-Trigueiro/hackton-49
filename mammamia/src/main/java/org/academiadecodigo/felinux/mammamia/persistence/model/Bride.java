@@ -8,6 +8,6 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name =
+@Table(name = "bride")
 public class Bride extends AbstractModel {
 }
