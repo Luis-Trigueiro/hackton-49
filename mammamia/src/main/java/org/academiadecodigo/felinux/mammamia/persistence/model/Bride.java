@@ -20,7 +20,7 @@ public class Bride extends AbstractModel {
     private SexType sex;
     private String aboutMe;
     private String favouriteSong;
-    private String Location;
+    private String location;
 
     @OneToMany(
             // propagate changes on customer entity to account entities
@@ -95,11 +95,11 @@ public class Bride extends AbstractModel {
     }
 
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
     public List<Proposal> getProposals() {
