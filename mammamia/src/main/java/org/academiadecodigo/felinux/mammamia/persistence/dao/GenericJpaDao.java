@@ -14,7 +14,7 @@ import java.util.List;
  * @param <T> the model type
  * @see Dao
  */
-public class GenericJpaDao<T extends Model> implements Dao<T> {
+public abstract class GenericJpaDao<T extends Model> implements Dao<T> {
 
     protected Class<T> modelType;
 
