@@ -5,7 +5,9 @@ import org.academiadecodigo.felinux.mammamia.persistence.model.Proposal;
 import org.academiadecodigo.felinux.mammamia.services.BrideService;
 import org.academiadecodigo.felinux.mammamia.services.ProposalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProposalDtoToProposal extends AbstractConverter<ProposalDto, Proposal> {
 
     private ProposalService proposalService;
@@ -18,7 +20,8 @@ public class ProposalDtoToProposal extends AbstractConverter<ProposalDto, Propos
     @Override
     public Proposal convert(ProposalDto proposalDto) {
 
-        Proposal proposal = (proposalDto.getBride() != null ? proposalService.get(proposalDto.) : new Proposal());
+
+        Proposal proposal = (proposalDto.getBride() != null ? proposalService.get(proposalDto.getBride().getId()) : new Proposal());
 
         proposal.setFullName(proposalDto.getFullName());
         proposal.setEmail(proposalDto.getEmail());
