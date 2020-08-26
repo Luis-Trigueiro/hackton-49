@@ -44,6 +44,7 @@ public class BrideServiceImpl implements BrideService{
         return brideDao.findAll();
     }
 
+    @Transactional
     @Override
     public void delete(Integer id) {
         brideDao.delete(id);
@@ -51,7 +52,8 @@ public class BrideServiceImpl implements BrideService{
 
     @Override
     public List<Proposal> listProposal(Integer id) {
-        return null;
+        Bride bride = brideDao.findById(id);
+        return new ArrayList<>(bride.getProposals());
     }
 
     @Transactional
