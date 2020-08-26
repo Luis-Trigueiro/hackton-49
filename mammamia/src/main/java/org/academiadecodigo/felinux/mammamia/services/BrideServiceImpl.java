@@ -5,12 +5,14 @@ import org.academiadecodigo.felinux.mammamia.persistence.dao.ProposalDao;
 import org.academiadecodigo.felinux.mammamia.persistence.model.Bride;
 import org.academiadecodigo.felinux.mammamia.persistence.model.Proposal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class BrideServiceImpl implements BrideService{
 
 
