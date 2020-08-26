@@ -1,4 +1,4 @@
 package org.academiadecodigo.felinux.mammamia.persistence.dao;
 
-public interface ProposalDao {
+public interface ProposalDao extends Dao{
 }

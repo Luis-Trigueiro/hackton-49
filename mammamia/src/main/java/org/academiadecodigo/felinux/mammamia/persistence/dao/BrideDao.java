@@ -1,4 +1,4 @@
 package org.academiadecodigo.felinux.mammamia.persistence.dao;
 
-public interface BrideDao {
+public interface BrideDao extends Dao {
 }
