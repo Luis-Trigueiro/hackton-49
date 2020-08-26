@@ -10,7 +10,7 @@ public class ProposalToProposalDto extends AbstractConverter<Proposal, ProposalD
     public ProposalDto convert(Proposal proposal) {
 
         ProposalDto proposalDto = new ProposalDto();
-        proposalDto.setId(proposal.getId());
+        proposalDto.setBride(proposal.getBride());
         proposalDto.setFullName(proposal.getFullName());
         proposalDto.setEmail(proposal.getEmail());
         proposalDto.setMessage(proposal.getMessage());

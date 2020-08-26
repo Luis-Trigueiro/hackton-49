@@ -19,14 +19,14 @@ public class ProposalDtoToProposal extends AbstractConverter<ProposalDto, Propos
     @Override
     public Proposal convert(ProposalDto proposalDto) {
 
-        Proposal proposal = (proposalDto.getId() != null ? proposalService.get(proposalDto.getId()) : new Proposal());
+        Proposal proposal = (proposalDto.getBride() != null ? proposalService.get(proposalDto.getbride()) : new Proposal());
 
         proposal.setFullName(proposalDto.getFullName());
         proposal.setEmail(proposalDto.getEmail());
         proposal.setMessage(proposalDto.getMessage());
-        proposal.setPhone(proposalDto.getPhone());
 
-        return customer;
+
+        return proposal;
     }
 }
 
