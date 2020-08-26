@@ -9,7 +9,7 @@ public interface BrideService {
 
     Bride get (Integer id);
 
-    void createBride ();
+    void saveBride (Bride bride);
 
     List<Bride> listAll ();
 
