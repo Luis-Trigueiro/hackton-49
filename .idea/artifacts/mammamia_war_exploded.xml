@@ -85,6 +85,7 @@
           <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.8.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:2.0.0.Final" />
         </element>
       </element>
       <element id="directory" name="META-INF">
