@@ -2,11 +2,8 @@ package org.academiadecodigo.felinux.mammamia.converters;
 
 import org.academiadecodigo.felinux.mammamia.command.BrideDto;
 import org.academiadecodigo.felinux.mammamia.persistence.model.Bride;
-import org.academiadecodigo.felinux.mammamia.persistence.model.variables.SexType;
 import org.academiadecodigo.felinux.mammamia.services.BrideService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Date;
 
 public class BrideDtoToBride extends AbstractConverter<BrideDto, Bride> {
 
@@ -27,7 +24,7 @@ public class BrideDtoToBride extends AbstractConverter<BrideDto, Bride> {
         bride.setFirstName(brideDto.getFirstName());
         bride.setLastName(brideDto.getLastName());
         bride.setNickname(brideDto.getNickname());
-        bride.setBirthDate(birthdateConverter.birthDateConvert(brideDto.getBirthDate()));
+        bride.setBirthDate(birthdateConverter.birthDateToDate(brideDto.getBirthDate()));
         bride.setSex(brideDto.getSex());
         bride.setAboutMe(brideDto.getAboutMe());
         bride.setFavouriteSong(brideDto.getFavouriteSong());

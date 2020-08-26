@@ -4,7 +4,9 @@ import org.academiadecodigo.felinux.mammamia.command.BrideDto;
 import org.academiadecodigo.felinux.mammamia.persistence.model.Bride;
 
 public class BrideToBrideDto extends AbstractConverter<Bride, BrideDto> {
-    private BirthdateConverter birthdateConverter;
+
+    //private BirthdateConverter birthdateConverter;
+
     @Override
     public BrideDto convert(Bride bride) {
 
@@ -13,7 +15,7 @@ public class BrideToBrideDto extends AbstractConverter<Bride, BrideDto> {
         brideDto.setFirstName(bride.getFirstName());
         brideDto.setLastName(bride.getLastName());
         brideDto.setNickname(bride.getNickname());
-        brideDto.setBirthDate(birthdateConverter.birthDateConvert(bride.getBirthDate()));
+        brideDto.setBirthDate(bride.getBirthDate());
         brideDto.setSex(bride.getSex());
         brideDto.setAboutMe(bride.getAboutMe());
         brideDto.setFavouriteSong(bride.getFavouriteSong());
