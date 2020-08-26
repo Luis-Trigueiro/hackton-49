@@ -1,0 +1,23 @@
+#logo {
+    height: 80px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#top_banner{
+    background-color: #724E91;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: center;
+    align-items: center;
+}
+
+#sign_in{
+    position: relative;
+    float: right;
+    vertical-align: middle;
+    top: 40px;
+    align-content: center;
+    
+}
