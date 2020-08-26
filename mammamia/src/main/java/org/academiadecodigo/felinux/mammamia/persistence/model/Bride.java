@@ -20,7 +20,7 @@ public class Bride extends AbstractModel {
     private SexType sex;
     private String aboutMe;
     private String favouriteSong;
-    private String Location;
+    private String location;
 
     @OneToMany(
             // propagate changes on customer entity to account entities

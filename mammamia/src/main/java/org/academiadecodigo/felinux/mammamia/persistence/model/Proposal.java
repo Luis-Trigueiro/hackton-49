@@ -6,7 +6,6 @@ import javax.persistence.*;
  * A generic account model entity to be used as a base for concrete types of accounts
  */
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Proposal extends AbstractModel {
 
     @ManyToOne

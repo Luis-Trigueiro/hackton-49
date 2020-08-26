@@ -3,15 +3,13 @@ package org.academiadecodigo.felinux.mammamia.persistence.model;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Version;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * A generic model entity to be used as a base for concrete types of models
  */
+@MappedSuperclass
 public abstract class AbstractModel implements Model {
 
     @Id
