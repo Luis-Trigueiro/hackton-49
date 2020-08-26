@@ -70,15 +70,6 @@ public class ProposalController {
         this.brideDtoToBride = brideDtoToBride;
     }
 
-    /* @RequestMapping(method = RequestMethod.GET, path = "{cid}/proposal/{id}")
-    public ResponseEntity<ProposalDto> getProposal (@PathVariable Integer cid, @PathVariable Integer id) {
-        Proposal proposal = proposalService.get(id);
-
-        if (proposal == null){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(proposalToProposalDto.convert(proposal),HttpStatus.OK);
-    }    */
 
     @RequestMapping(method = RequestMethod.GET, path = "{id}/proposal")
     public String listProposal (@PathVariable Integer id, Model model){
