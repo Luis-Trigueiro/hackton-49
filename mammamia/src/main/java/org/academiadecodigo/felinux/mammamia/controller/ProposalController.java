@@ -2,21 +2,37 @@ package org.academiadecodigo.felinux.mammamia.controller;
 
 import org.academiadecodigo.felinux.mammamia.command.BrideDto;
 import org.academiadecodigo.felinux.mammamia.command.ProposalDto;
+import org.academiadecodigo.felinux.mammamia.converters.BrideDtoToBride;
+import org.academiadecodigo.felinux.mammamia.converters.BrideToBrideDto;
+import org.academiadecodigo.felinux.mammamia.converters.ProposalDtoToProposal;
+import org.academiadecodigo.felinux.mammamia.converters.ProposalToProposalDto;
+import org.academiadecodigo.felinux.mammamia.persistence.model.Bride;
+import org.academiadecodigo.felinux.mammamia.persistence.model.Proposal;
 import org.academiadecodigo.felinux.mammamia.services.BrideService;
 import org.academiadecodigo.felinux.mammamia.services.ProposalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @Controller
-@RequestMapping
+@RequestMapping("/bride")
 public class ProposalController {
 
     private BrideService brideService;
     private ProposalService proposalService;
-    private BrideDto brideDto;
-    private ProposalDto proposalDto;
+    private ProposalDtoToProposal proposalDtoToProposal;
+    private ProposalToProposalDto proposalToProposalDto;
+    private BrideToBrideDto brideToBrideDto;
+    private BrideDtoToBride brideDtoToBride;
 
 
     /**
@@ -35,21 +51,50 @@ public class ProposalController {
     }
 
     @Autowired
-    public void setBrideDto(BrideDto brideDto){
-        this.brideDto = brideDto;
+    public void setProposalDtoToProposal(ProposalDtoToProposal proposalDtoToProposal) {
+        this.proposalDtoToProposal = proposalDtoToProposal;
     }
 
     @Autowired
-    public void setProposalDto(ProposalDto proposalDto){
-        this.proposalDto = proposalDto;
+    public void setProposalToProposalDto(ProposalToProposalDto proposalToProposalDto) {
+        this.proposalToProposalDto = proposalToProposalDto;
     }
 
-    public String initProposal(){
-        return "";
+    @Autowired
+    public void setBrideToBrideDto(BrideToBrideDto brideToBrideDto) {
+        this.brideToBrideDto = brideToBrideDto;
     }
 
-    public String sendProposal(){
-        return "";
+    @Autowired
+    public void setBrideDtoToBride(BrideDtoToBride brideDtoToBride) {
+        this.brideDtoToBride = brideDtoToBride;
     }
+
+    /* @RequestMapping(method = RequestMethod.GET, path = "{cid}/proposal/{id}")
+    public ResponseEntity<ProposalDto> getProposal (@PathVariable Integer cid, @PathVariable Integer id) {
+        Proposal proposal = proposalService.get(id);
+
+        if (proposal == null){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(proposalToProposalDto.convert(proposal),HttpStatus.OK);
+    }    */
+
+    @RequestMapping(method = RequestMethod.GET, path = "{id}/proposal")
+    public String listProposal (@PathVariable Integer id, Model model){
+
+
+               List<Proposal> proposals = brideService.listProposal(id);
+               Bride bride = brideService.get(id);
+
+               model.addAttribute("proposals", proposalToProposalDto.convert(proposals));
+               model.addAttribute("bride", brideToBrideDto.convert(bride));
+
+                return "proposal/list";
+        }
+
+
+
 
 }
+
