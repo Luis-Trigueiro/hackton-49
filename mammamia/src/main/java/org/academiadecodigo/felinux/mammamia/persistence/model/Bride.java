@@ -31,7 +31,7 @@ public class Bride extends AbstractModel {
 
             // user customer foreign key on account table to establish
             // the many-to-one relationship instead of a join table
-            mappedBy = "customer",
+            mappedBy = "bride",
 
             // fetch accounts from database together with user
             fetch = FetchType.EAGER
