@@ -37,7 +37,6 @@ public class BrideServiceImpl implements BrideService{
     @Override
     public void saveBride(Bride bride) {
         brideDao.saveOrUpdate(bride);
-
     }
 
     @Override
@@ -55,8 +54,9 @@ public class BrideServiceImpl implements BrideService{
         return null;
     }
 
+    @Transactional
     @Override
     public Proposal addProposal(Integer id, Proposal proposal) {
-        return proposalDao.saveOrUpdate(proposal);
+       return null;
     }
 }
