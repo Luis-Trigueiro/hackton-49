@@ -95,11 +95,11 @@ public class Bride extends AbstractModel {
     }
 
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
     public List<Proposal> getProposals() {
