@@ -21,11 +21,11 @@ public class BrideDto {
 
     @NotNull(message = "Nickname is mandatory")
     @NotBlank(message = "Nickname is mandatory")
-
+    private String nickname;
 
     @NotNull(message = "Day of birth is mandatory")
     @NotBlank(message = "Day of birth is mandatory")
-    private Date birthdate;
+    private String birthDate;
 
     @NotNull(message = "Sex is mandatory (phrasing)")
     @NotBlank(message = "Sex is mandatory (phrasing)")
@@ -59,12 +59,20 @@ public class BrideDto {
         this.lastName = lastName;
     }
 
-    public Date getBirthdate() {
-        return birthdate;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setBirthdate(Date birthdate) {
-        this.birthdate = birthdate;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 
     public SexType getSex() {

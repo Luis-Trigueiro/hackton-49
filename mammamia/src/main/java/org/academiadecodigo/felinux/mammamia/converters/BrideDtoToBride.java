@@ -11,7 +11,7 @@ import java.util.Date;
 public class BrideDtoToBride extends AbstractConverter<BrideDto, Bride> {
 
     private BrideService brideService;
-
+    private BirthdateConverter birthdateConverter;
 
     @Autowired
     public void setBrideService(BrideService brideService) {
@@ -27,7 +27,7 @@ public class BrideDtoToBride extends AbstractConverter<BrideDto, Bride> {
         bride.setFirstName(brideDto.getFirstName());
         bride.setLastName(brideDto.getLastName());
         bride.setNickname(brideDto.getNickname());
-        bride.setBirthDate(brideDto.getBirthDate());
+        bride.setBirthDate(birthdateConverter.birthDateConvert(brideDto.getBirthDate()));
         bride.setSex(brideDto.getSex());
         bride.setAboutMe(brideDto.getAboutMe());
         bride.setFavouriteSong(brideDto.getFavouriteSong());
