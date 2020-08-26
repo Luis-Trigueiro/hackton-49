@@ -2,9 +2,11 @@ package org.academiadecodigo.felinux.mammamia.command;
 
 
 import org.academiadecodigo.felinux.mammamia.persistence.model.variables.SexType;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.*;
 
+@Component
 public class BrideDto {
 
     private Integer id;
