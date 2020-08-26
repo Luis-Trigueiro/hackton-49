@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mammamia:war">
+    <output-path>$PROJECT_DIR$/mammamia/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>mammamia</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="mammamia-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="mammamia:war exploded" />
+    </root>
+  </artifact>
+</component>
