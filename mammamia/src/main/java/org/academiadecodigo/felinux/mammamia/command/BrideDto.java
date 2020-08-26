@@ -19,6 +19,10 @@ public class BrideDto {
     @Size(min = 3, max = 64)
     private String lastName;
 
+    @NotNull(message = "Nickname is mandatory")
+    @NotBlank(message = "Nickname is mandatory")
+
+
     @NotNull(message = "Day of birth is mandatory")
     @NotBlank(message = "Day of birth is mandatory")
     private Date birthdate;
