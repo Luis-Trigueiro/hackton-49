@@ -9,5 +9,4 @@ public class MammamiaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MammamiaApplication.class, args);
 	}
-
 }
