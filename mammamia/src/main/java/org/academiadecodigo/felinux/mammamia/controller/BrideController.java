@@ -103,7 +103,7 @@ public class BrideController {
 
         model.addAttribute("bride", brideToBrideDto.convert(brideService.get(id)));
         model.addAttribute("proposals",proposalToProposalDto.convert(brideService.listProposal(id)));
-        return "bride/show";
+        return "/WEB-INF/templates/profile.html";
     }
 
 
