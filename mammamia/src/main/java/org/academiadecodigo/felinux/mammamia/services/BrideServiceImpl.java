@@ -1,5 +1,6 @@
 package org.academiadecodigo.felinux.mammamia.services;
 
+import org.academiadecodigo.felinux.mammamia.command.BrideDto;
 import org.academiadecodigo.felinux.mammamia.persistence.dao.BrideDao;
 import org.academiadecodigo.felinux.mammamia.persistence.dao.ProposalDao;
 import org.academiadecodigo.felinux.mammamia.persistence.model.Bride;
@@ -61,5 +62,9 @@ public class BrideServiceImpl implements BrideService{
     @Override
     public Proposal addProposal(Integer id, Proposal proposal) {
        return null;
+    }
+
+    public Bride save(Bride bride){
+        return null;
     }
 }

@@ -18,4 +18,6 @@ public interface BrideService {
     List<Proposal> listProposal (Integer id);
 
     Proposal addProposal (Integer id, Proposal proposal);
+
+    Bride save(Bride bride);
 }

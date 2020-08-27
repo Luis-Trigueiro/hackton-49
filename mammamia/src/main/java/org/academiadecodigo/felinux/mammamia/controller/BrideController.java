@@ -102,8 +102,56 @@ public class BrideController {
     public String showBride(@PathVariable Integer id, Model model) throws Exception {
 
         model.addAttribute("bride", brideToBrideDto.convert(brideService.get(id)));
-        model.addAttribute("proposal",proposalToProposalDto.convert(brideService.listProposal(id)));
+        model.addAttribute("proposals",proposalToProposalDto.convert(brideService.listProposal(id)));
         return "bride/show";
+    }
+
+
+    /**
+     * Saves the bride form submission and renders a view
+     *
+     * @param brideDto        the customer DTO object
+     * @param bindingResult      the binding result object
+     * @param redirectAttributes the redirect attributes object
+     * @return the view to render
+     */
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=save")
+    public String saveCustomer(@Valid @ModelAttribute("bride") BrideDto brideDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            return "bride/add-update";
+        }
+
+        Bride savedBride = brideService.save(brideDtoToBride.convert(brideDto));
+
+        redirectAttributes.addFlashAttribute("lastAction", "Saved " + savedBride.getFirstName() + " " + savedBride.getLastName());
+        return "redirect:/bride/" + savedBride.getId();
+    }
+
+    /**
+     * Cancels the bride submission and renders the default the bride view
+     *
+     * @return the view to render
+     */
+    @RequestMapping(method = RequestMethod.POST, path = {"/", ""}, params = "action=cancel")
+    public String cancelSaveBride() {
+        // we could use an anchor tag in the view for this, but we might want to do something clever in the future here
+        return "redirect:/bride/";
+    }
+
+    /**
+     * Deletes the bride and renders the default bride view
+     *
+     * @param id                 the customer id
+     * @param redirectAttributes the redirect attributes object
+     * @return the view to render
+     */
+    @RequestMapping(method = RequestMethod.GET, path = "{id}/delete")
+    public String deleteCustomer(@PathVariable Integer id, RedirectAttributes redirectAttributes){
+        Bride bride = brideService.get(id);
+        brideService.delete(id);
+        redirectAttributes.addFlashAttribute("lastAction", "Deleted " + bride.getFirstName() + " " + bride.getLastName());
+        return "redirect:/bride";
     }
 
 }
