@@ -31,7 +31,7 @@ public class BrideDto {
 
     @NotNull(message = "Sex is mandatory (phrasing)")
     @NotBlank(message = "Sex is mandatory (phrasing)")
-    private SexType sex;
+    private String sex;
 
     private String aboutMe;
     private String favouriteSong;
@@ -77,11 +77,11 @@ public class BrideDto {
         this.birthDate = birthDate;
     }
 
-    public SexType getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(SexType sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
