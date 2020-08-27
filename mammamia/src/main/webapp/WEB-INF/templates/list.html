@@ -22,7 +22,7 @@
                     <div class="card-body">
                         <h5 th:text="${bride.getNickname()}" class="card-title">Card title</h5>
                         <p th:text="${bride.getAboutMe()}" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">View Profile</a>
+                        <a th:href="profile.html/${bride.getId()}" href="../templates/Erro/404.html" class="btn btn-primary">View Profile</a>
                     </div>
                 </div>
 
