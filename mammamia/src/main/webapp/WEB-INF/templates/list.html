@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>MMIA - LIST</title>
     <link rel="stylesheet" type="text/css" href="CSS/mystyle.css">
@@ -11,6 +11,27 @@
         <img id="logo" src="../assets/logo3.png">
         <button id="findlove" class="btn btn-outline-success" type="button">Find Love</button>
     </div>
+
+<div>
+    <table>
+        <tr th:each="bride : ${brides}">
+            <td>
+                <div class="card" style="width: 18rem;">
+                    <img th:src="../assets/${bride.getId()} + .jpg" src="../assets/brideindex1.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 th:text="${bride.getNickname()}" class="card-title">Card title</h5>
+                        <p th:text="${bride.getAboutMe()}" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">View Profile</a>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+
+
+    </table>
+
+</div>
 
 </body>
 </html>

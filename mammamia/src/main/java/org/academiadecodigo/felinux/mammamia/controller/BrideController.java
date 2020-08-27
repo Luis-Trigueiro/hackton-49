@@ -62,7 +62,7 @@ public class BrideController {
     @RequestMapping(method = RequestMethod.GET, path = {"/list", "/", ""})
     public String listBrides(Model model) {
         model.addAttribute("brides", brideToBrideDto.convert(brideService.listAll()));
-        return "bride/list";
+        return "WEB-INF/templates/list.html";
     }
 
     /**
