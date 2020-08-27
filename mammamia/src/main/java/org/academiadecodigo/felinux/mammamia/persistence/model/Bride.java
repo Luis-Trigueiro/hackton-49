@@ -3,7 +3,6 @@ package org.academiadecodigo.felinux.mammamia.persistence.model;
 import org.academiadecodigo.felinux.mammamia.persistence.model.variables.SexType;
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -17,7 +16,7 @@ public class Bride extends AbstractModel {
     private String lastName;
     private String nickname;
     private String birthDate; //I'm sorry, brain no work more - Bey
-    private SexType sex;
+    private String sex;
     private String aboutMe;
     private String favouriteSong;
     private String location;
@@ -70,11 +69,11 @@ public class Bride extends AbstractModel {
         this.birthDate = birthDate;
     }
 
-    public SexType getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(SexType sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
