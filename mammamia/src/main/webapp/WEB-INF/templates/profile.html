@@ -7,15 +7,15 @@
 </head>
 <body>
 <div id="top_banner">
-<<<<<<< HEAD
-    <img id="logo" src="../../../../../../front-end/assets/logo.png"></img>
-    <div  id="sign_in"><a>Sign in</a></div>
+    <img id="logo2" src="../assets/logo3.png">
+    <button id="findlove" class="btn btn-outline-success" type="button">Find Love</button>
+
 </div>
 <div id="profile_column_left">
     <table>
         <tr>
             <td>
-                <img th:src="profile-pics/${bride.getImg()}">
+                <img th:src="profile-pics/${bride.getId()}">
             </td>
         </tr>
     </table>
@@ -36,12 +36,6 @@
             <td th:text="${bride.getAboutMe()}"></td>
         </tr>
     </table>
-
-
-=======
-    <img id="logo" src="../assets/logo3.png">
-    <button id="findlove" class="btn btn-outline-success" type="button">Find Love</button>
->>>>>>> 8ff8c31c98714d426ec2aea4d1fd5e60fb6bc2e1
 </div>
 </body>
 </html>
