@@ -18,4 +18,8 @@ public class ProposalServiceImpl implements ProposalService {
     public Proposal get(Integer id) {
         return proposalService.get(id);
     }
+    @Override
+    public void delete(Integer id) {
+        proposalService.delete(id);
+    }
 }
