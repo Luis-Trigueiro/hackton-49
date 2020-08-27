@@ -80,6 +80,12 @@ public class ProposalController {
                 return "proposal/list";
         }
 
+     @RequestMapping(method = RequestMethod.GET, path = "/addProposal")
+    public String addProposal (Model model){
+        model.addAttribute("proposal", new Proposal());
+        return "proposal/add";
+     }
+
 
 
 
