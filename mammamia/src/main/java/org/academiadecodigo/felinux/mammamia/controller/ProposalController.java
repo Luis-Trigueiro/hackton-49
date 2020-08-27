@@ -81,6 +81,22 @@ public class ProposalController {
         }
 
 
+    @RequestMapping(method = RequestMethod.GET, path = "/addProposal")
+    public String addProposal (Model model){
+        model.addAttribute("proposal", new Proposal());
+        return "proposal/add";
+    }
+
+
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}/deleteProposal")
+    public String deleteProposal (@PathVariable Integer id, Model model){
+        Proposal proposal = proposalService.get(id);
+        proposalService.delete(id);
+        model.addAttribute("delete", proposal);
+        return "proposal/delete";
+    }
+
+
 
 
 }

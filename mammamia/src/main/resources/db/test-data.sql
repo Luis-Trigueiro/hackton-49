@@ -6,4 +6,4 @@ INSERT INTO bride(ID, CREATION_TIME, UPDATE_TIME, VERSION, FIRST_NAME, LAST_NAME
 
 DELETE FROM proposal;
 INSERT INTO proposal(ID, CREATION_TIME, UPDATE_TIME, VERSION, FULL_NAME, EMAIL, MESSAGE, BRIDE_ID) VALUES
-    (1, TIMESTAMP '2020-08-27 08:45:56.468', TIMESTAMP '2020-08-27 08:45:57.468', 0, 'Catarina Campino', 'catarinacampino@academiadecodigo.org', 'E quê?', '1');
+    (1, TIMESTAMP '2020-08-27 08:45:56.468', TIMESTAMP '2020-08-27 08:45:57.468', 0, 'Catarina Campino', 'catarinacampino@academiadecodigo.org', 'E quê?', 1);
