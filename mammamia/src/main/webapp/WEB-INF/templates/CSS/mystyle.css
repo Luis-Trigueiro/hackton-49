@@ -1,12 +1,12 @@
 #logo {
-    height: 80px;
+    height: 150px;
     margin-left: 30px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
 #top_banner{
-    background-color: #724E91;
+    background-color: Black;
     margin: 0px;
     padding: 0px;
     vertical-align: center;
@@ -21,3 +21,27 @@
     align-content: center;
     
 }
+
+footer {
+    display: block;
+    text-align: center;
+    padding: 3px;
+    background-color: Black;
+    color: white;
+}
+
+#contact{
+    position: relative;
+    float: left;
+    vertical-align: middle;
+    top: 40px;
+    align-content: center;
+
+}
+
+#mail {
+    height: 100px;
+
+}
+
+
