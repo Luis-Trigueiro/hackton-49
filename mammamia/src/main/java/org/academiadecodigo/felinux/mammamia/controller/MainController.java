@@ -17,6 +17,6 @@ public class MainController {
      */
     @RequestMapping("/")
     public String home() {
-        return "redirect:/Home";
+        return "redirect:/WEB-INF/templates/profile.html";
     }
 }
