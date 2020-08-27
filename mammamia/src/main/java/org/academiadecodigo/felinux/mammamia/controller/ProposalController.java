@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 
@@ -84,6 +85,14 @@ public class ProposalController {
     public String addProposal (Model model){
         model.addAttribute("proposal", new Proposal());
         return "proposal/add";
+     }
+
+     @RequestMapping(method = RequestMethod.GET, path = "/{id}/deleteProposal")
+    public String deleteProposal (@PathVariable Integer id, Model model){
+        Proposal proposal = proposalService.get(id);
+        proposalService.delete(id);
+        model.addAttribute("delete", proposal);
+        return "proposal/delete";
      }
 
 
