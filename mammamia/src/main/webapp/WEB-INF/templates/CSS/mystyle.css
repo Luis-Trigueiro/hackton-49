@@ -23,6 +23,10 @@
 }
 
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     display: block;
     text-align: center;
     padding: 3px;
@@ -43,5 +47,8 @@ footer {
     height: 100px;
 
 }
+.card {
+    margin-left: 20px;
 
+}
 

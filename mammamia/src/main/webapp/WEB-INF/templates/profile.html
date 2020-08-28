@@ -3,39 +3,51 @@
 <head>
     <title>MMIA - LIST</title>
     <link rel="stylesheet" type="text/css" href="CSS/mystyle.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
 <div id="top_banner">
     <img id="logo2" src="../assets/logo3.png">
-     <button id="findlove" class="btn btn-outline-success" type="button">Find Love</button>
+    <button id="findlove" class="btn btn-outline-success" type="button">Find Love</button>
 
 </div>
-<div id="profile_column_left">
-    <table>
-        <tr>
-            <td>
-                <img th:src="profile-pics/${bride.getId()}">
-            </td>
-        </tr>
-    </table>
+<div class="card" style="width: 18rem;float: left;margin-top: 40px">
+    <img th:src="../assets/${bride.getId()} + .jpg" src="../assets/men1.jpg"
+         class="card-img-top" alt="...">
+
+    <form>
+
+        <div class="form-group;">
+            <label for="exampleInputPassword1">Send Message</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+
+<div style="float: left;margin-left: 300px;margin-top: 40px">
+    <h1>Rui Silva</h1>
+    <h6>About me: </h6>
+    <h6>Age 25</h6>
+    <h6>Local: Portugal</h6>
+    <h6>Job: Model</h6>
+    <h6>Children: 0</h6>
 
 </div>
-<div id="profile_column_right">
-    <table>
-       <tr>
-           <td th:text="${bride.getFirstName()} + ${bride.getLastName()}"></td>
-       </tr>
-        <tr>
-            <td th:text="${bride.getSex()}"></td>
-        </tr>
-        <tr>
-            <td th:text="${bride.getLocation()}"></td>
-        </tr>
-        <tr>
-            <td th:text="${bride.getAboutMe()}"></td>
-        </tr>
-    </table>
-</div>
+
+<footer>
+    <div id="contact">
+        Contact: <a href="mailto:name@email.com"> mammamia@mamamia.com</a>
+    </div>
+
+    <div class="footer-copyright text-center py-3"> 2020 Copyright:
+        <a href="https://mammamia.com/">BMW Carona</a>
+
+    </div>
+
+</footer>
+
 </body>
 </html>

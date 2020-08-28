@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MMIA - LIST</title>
+    <link rel="stylesheet" type="text/css" href="CSS/mystyle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+<!--BANNER-->
+<div id="top_banner">
+    <img id="logo" src="../assets/logo3.png">
+    <button id="findlove" class="btn btn-outline-success" type="button">Find Love</button>
+</div>
+
+
+<div>
+    <table>
+        <tr th:each="bride : ${brides}">
+            <td>
+                <div class="card" style="width: 18rem;">
+                    <img  th:src="../assets/${bride.getId()} + .jpg" src="../assets/men1.jpg"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 th:text="${bride.getNickname()}" class="card-title">Card title</h5>
+                        <p th:text="${bride.getAboutMe()}" class="card-text">Some quick example text to build on the
+                            card title and make up the bulk of the card's content.</p>
+                        <a th:href="profile.html/${bride.getId()}" href="../templates/Erro/404.html"
+                           class="btn btn-primary">View Profile</a>
+                    </div>
+                </div>
+
+            </td>
+            <td>
+                <div class="card" style="width: 18rem;">
+                    <img th:src="../assets/${bride.getId()} + .jpg" src="../assets/men2.jpg"
+                    class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 th:text="${bride.getNickname()}" class="card-title">Card title</h5>
+                        <p th:text="${bride.getAboutMe()}" class="card-text">Some quick example text to build on the
+                            card title and make up the bulk of the card's content.</p>
+                        <a th:href="profile.html/${bride.getId()}" href="../templates/Erro/404.html"
+                           class="btn btn-primary">View Profile</a>
+                    </div>
+                </div>
+
+            </td>
+            <td>
+                <div class="card" style="width: 18rem;">
+                    <img th:src="../assets/${bride.getId()} + .jpg" src="../assets/men3.jpg"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 th:text="${bride.getNickname()}" class="card-title">Card title</h5>
+                        <p th:text="${bride.getAboutMe()}" class="card-text">Some quick example text to build on the
+                            card title and make up the bulk of the card's content.</p>
+                        <a th:href="profile.html/${bride.getId()}" href="../templates/Erro/404.html"
+                           class="btn btn-primary">View Profile</a>
+                    </div>
+                </div>
+
+            </td>
+            <td>
+                <div class="card" style="width: 18rem;">
+                    <img th:src="../assets/${bride.getId()} + .jpg" src="../assets/men4.jpg"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 th:text="${bride.getNickname()}" class="card-title">Card title</h5>
+                        <p th:text="${bride.getAboutMe()}" class="card-text">Some quick example text to build on the
+                            card title and make up the bulk of the card's content.</p>
+                        <a th:href="profile.html/${bride.getId()}" href="../templates/Erro/404.html"
+                           class="btn btn-primary">View Profile</a>
+                    </div>
+                </div>
+
+            </td>
+            <td>
+                <div class="card" style="width: 18rem;">
+                    <img th:src="../assets/${bride.getId()} + .jpg" src="../assets/men5.jpg"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 th:text="${bride.getNickname()}" class="card-title">Card title</h5>
+                        <p th:text="${bride.getAboutMe()}" class="card-text">Some quick example text to build on the
+                            card title and make up the bulk of the card's content.</p>
+                        <a th:href="profile.html/${bride.getId()}" href="../templates/Erro/404.html"
+                           class="btn btn-primary">View Profile</a>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+
+
+    </table>
+
+</div>
+
+<nav  aria-label="...">
+    <ul class="pagination pagination-lg">
+        <li class="page-item active" aria-current="page">
+      <span  class="page-link">
+        1
+        <span class="sr-only">(current)</span>
+      </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+    </ul>
+</nav>
+<footer>
+    <div id="contact">
+        Contact: <a href="mailto:name@email.com"> mammamia@mamamia.com</a>
+    </div>
+
+    <div class="footer-copyright text-center py-3"> 2020 Copyright:
+        <a href="https://mammamia.com/">BMW Carona</a>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>
